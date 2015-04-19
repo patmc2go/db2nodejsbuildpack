@@ -33,7 +33,7 @@ cat_npm_debug_log() {
 install_db2_odbc() {
 		DB2_DIR="$1"
 		echo "---------------------------------"
-		echo "patmc2go in use - v.001"
+		echo "patmc2go in use - v.002"
 		echo $DB2_DIR
 		echo "---------------------------------"
 		echo "test DB2_DIR/clidriver"
@@ -47,7 +47,7 @@ install_db2_odbc() {
 			echo "---------------------------------"
 			echo "In the if/test for /clidriver dir"
 		        #mkdir -p "$DB2_DIR"
-		        DB2_DSDRIVER_URL="http://rtpgsa.ibm.com/home/p/a/patmc/public/v9.7fp9_linuxx64_odbc_cli.tar.gz"
+		        DB2_DSDRIVER_URL="http://9.44.51.77/home/p/a/patmc/public/v9.7fp9_linuxx64_odbc_cli.tar.gz"
 			#DB2_DSDRIVER_URL="https://sqldbclientwrapper.stage1.mybluemix.net/public/db2client/v9.7fp9_linuxx64_odbc_cli.tar.gz"
 			echo "---------------------------------"
 			echo "DB2_DSDRIVER_URL:" ${DB2_DSDRIVER_URL}
