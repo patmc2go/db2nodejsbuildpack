@@ -33,15 +33,15 @@ cat_npm_debug_log() {
 install_db2_odbc() {
 		DB2_DIR="$1"
 		echo "---------------------------------"
-		echo "patmc2go in use"
+		echo "patmc2go in use - v.001"
 		echo $DB2_DIR
 		echo "---------------------------------"
 		echo "test DB2_DIR/clidriver"
-		echo [ ! -d "$DB2_DIR/clidriver" ]
+		ls -l $DB2_DIR 
 		echo "---------------------------------"
 		dir $DB2_DIR
 		echo "---------------------------------"
-		ls $DB2_DIR/clidriver
+		#ls $DB2_DIR/clidriver
 		echo "---------------------------------"
 		if [ ! -d "$DB2_DIR/clidriver" ]; then
 			echo "---------------------------------"
