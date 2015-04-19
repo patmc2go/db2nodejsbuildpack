@@ -36,7 +36,10 @@ install_db2_odbc() {
 		echo "patmc2go in use"
 		echo $DB2_DIR
 		echo "---------------------------------"
-		ls $DB2_DIR
+		echo "test DB2_DIR/clidriver"
+		echo [ ! -d "$DB2_DIR/clidriver" ]
+		echo "---------------------------------"
+		dir $DB2_DIR
 		echo "---------------------------------"
 		ls $DB2_DIR/clidriver
 		echo "---------------------------------"
@@ -49,7 +52,10 @@ install_db2_odbc() {
 			status "downloading DB2 ODBC driver..."
 			#curl ${DB2_DSDRIVER_URL} -s -o ${DB2_DIR}/clidriver.tgz
 			#tar xzf ${DB2_DIR}/clidriver.tgz -C ${DB2_DIR}
+			echo "---------------------------------"
+			echo "about to tar/extract..."
 			tar xzf ${DB2_DIR}/clidriver/v9.7fp9_linuxx64_odbc_cli.tar.gz -C ${DB2_DIR}
+			echo "...done with tar/extract"
                         #Delete the archive
                         #rm -rf ${DB2_DIR}/clidriver.tgz
 		fi
