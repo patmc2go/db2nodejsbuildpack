@@ -48,5 +48,5 @@ install_db2_odbc() {
                         rm -rf ${DB2_DIR}/clidriver.tgz
 		fi
 		export IBM_DB_HOME="$DB2_DIR/clidriver"
-		echo "IBM_DB_HOME:"" $IBM_DB_HOME
+		echo "IBM_DB_HOME: $IBM_DB_HOME
 }
