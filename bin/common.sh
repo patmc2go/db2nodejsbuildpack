@@ -33,7 +33,7 @@ cat_npm_debug_log() {
 install_db2_odbc() {
 		DB2_DIR="$1"
 		echo "---------------------------------"
-		echo "patmc2go in use - v.003"
+		echo "patmc2go in use - v.004"
 		echo $DB2_DIR
 		echo "---------------------------------"
 		echo "test DB2_DIR/clidriver"
@@ -67,4 +67,14 @@ install_db2_odbc() {
 		export IBM_DB_HOME="$DB2_DIR/clidriver/odbc_cli/clidriver"
 		echo "---------------------------------"
 		echo "IBM_DB_HOME:" $IBM_DB_HOME
+		echo "---------------------------------"
+		dir $DB2_DIR
+		echo "---------------------------------"
+		dir $DB2_DIR/clidriver
+		echo "---------------------------------"
+		dir $DB2_DIR/clidriver/odbc_cli
+		echo "---------------------------------"
+		dir $DB2_DIR/clidriver/odbc_cli/clidriver
+		echo "---------------------------------"
+		
 }
