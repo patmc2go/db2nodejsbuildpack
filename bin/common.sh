@@ -41,11 +41,13 @@ install_db2_odbc() {
 			DB2_DSDRIVER_URL="http://rtpgsa.ibm.com/home/p/a/patmc/public/v9.7fp9_linuxx64_odbc_cli.tar.gz"
 			echo "---------------------------------"
 			echo "DB2_DSDRIVER_URL:" ${DB2_DSDRIVER_URL}
+			echo "skipping download"
 			status "downloading DB2 ODBC driver..."
-			curl ${DB2_DSDRIVER_URL} -s -o ${DB2_DIR}/clidriver.tgz
-			tar xzf ${DB2_DIR}/clidriver.tgz -C ${DB2_DIR}
+			#curl ${DB2_DSDRIVER_URL} -s -o ${DB2_DIR}/clidriver.tgz
+			#tar xzf ${DB2_DIR}/clidriver.tgz -C ${DB2_DIR}
+			tar xzf ${DB2_DIR}/v9.7fp9_linuxx64_odbc_cli.tar.gz -C ${DB2_DIR}
                         #Delete the archive
-                        rm -rf ${DB2_DIR}/clidriver.tgz
+                        #rm -rf ${DB2_DIR}/clidriver.tgz
 		fi
 		export IBM_DB_HOME="$DB2_DIR/clidriver"
 		echo "IBM_DB_HOME:" $IBM_DB_HOME
