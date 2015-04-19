@@ -44,21 +44,26 @@ install_db2_odbc() {
 		ls $DB2_DIR/clidriver
 		echo "---------------------------------"
 		if [ ! -d "$DB2_DIR/clidriver" ]; then
+			echo "---------------------------------"
+			echo "In the if/test for /clidriver dir"
 		        #mkdir -p "$DB2_DIR"
-			DB2_DSDRIVER_URL="http://rtpgsa.ibm.com/home/p/a/patmc/public/v9.7fp9_linuxx64_odbc_cli.tar.gz"
+		        DB2_DSDRIVER_URL="http://rtpgsa.ibm.com/home/p/a/patmc/public/v9.7fp9_linuxx64_odbc_cli.tar.gz"
+			#DB2_DSDRIVER_URL="https://sqldbclientwrapper.stage1.mybluemix.net/public/db2client/v9.7fp9_linuxx64_odbc_cli.tar.gz"
 			echo "---------------------------------"
 			echo "DB2_DSDRIVER_URL:" ${DB2_DSDRIVER_URL}
-			echo "skipping download"
+			#echo "skipping download"
 			status "downloading DB2 ODBC driver..."
-			#curl ${DB2_DSDRIVER_URL} -s -o ${DB2_DIR}/clidriver.tgz
-			#tar xzf ${DB2_DIR}/clidriver.tgz -C ${DB2_DIR}
+			curl ${DB2_DSDRIVER_URL} -o ${DB2_DIR}/clidriver.tgz
 			echo "---------------------------------"
 			echo "about to tar/extract..."
-			tar xzf ${DB2_DIR}/clidriver/v9.7fp9_linuxx64_odbc_cli.tar.gz -C ${DB2_DIR}
+			tar xzf ${DB2_DIR}/clidriver.tgz -C ${DB2_DIR}
+			#tar xzf ${DB2_DIR}/clidriver/v9.7fp9_linuxx64_odbc_cli.tar.gz -C ${DB2_DIR}
+			echo "---------------------------------"
 			echo "...done with tar/extract"
                         #Delete the archive
                         #rm -rf ${DB2_DIR}/clidriver.tgz
 		fi
 		export IBM_DB_HOME="$DB2_DIR/clidriver/odbc_cli/clidriver"
+		echo "---------------------------------"
 		echo "IBM_DB_HOME:" $IBM_DB_HOME
 }
